@@ -12,8 +12,8 @@ import com.bitmax.api.client.impl.BitmaxWebSocketBootStrap;
 public class BitmaxOrderManageWebSocketExample {
 
     public static void main(String[] args) {
-        BitmaxApiWebSocketClient socketClient = BitmaxApiClientFactory.newInstance("api-key",
-                "secret").newWebSocketClient();
+        BitmaxApiWebSocketClient socketClient = BitmaxApiClientFactory.newInstance("your-api-key",
+                "your-secret").newWebSocketClient();
         String symbol = "ETH-BTC";
         // 订阅order manage
         BitmaxWebSocketBootStrap bootStrap = new BitmaxWebSocketBootStrap(WebSocketType.ORDER, socketClient,

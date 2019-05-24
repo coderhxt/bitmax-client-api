@@ -2,7 +2,7 @@ package com.bitmax.api.client.impl;
 
 import com.bitmax.api.client.BitmaxApiRestClient;
 import com.bitmax.api.client.BitmaxApiService;
-import com.bitmax.api.client.DepositAddressResp;
+import com.bitmax.api.client.domain.DepositAddressResp;
 import com.bitmax.api.client.domain.*;
 import org.apache.commons.lang3.StringUtils;
 

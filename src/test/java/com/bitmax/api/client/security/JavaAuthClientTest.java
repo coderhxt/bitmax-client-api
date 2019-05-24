@@ -7,8 +7,8 @@ public class JavaAuthClientTest {
     @Test
     public void testSign() throws Exception {
         String baseUrl = "https://bitmax.io";
-        String apiKey = "api-key";
-        String secret = "secret";
-        new JavaAuthClient(baseUrl, apiKey, secret).makeHeader("deposit", null);
+        String apiKey = "your-api-key";
+        String secret = "your-secret";
+        new JavaAuthClient(baseUrl, apiKey, secret).makeHeader("order/fills", null);
     }
 }

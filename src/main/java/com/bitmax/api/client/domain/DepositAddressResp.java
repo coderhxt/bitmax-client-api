@@ -1,6 +1,5 @@
-package com.bitmax.api.client;
+package com.bitmax.api.client.domain;
 
-import com.bitmax.api.client.domain.BaseResp;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;

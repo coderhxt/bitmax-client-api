@@ -19,10 +19,6 @@ public class BitmaxApiException extends RuntimeException implements Serializable
         this.error = error;
     }
 
-    public BitmaxApiException() {
-        super();
-    }
-
     public BitmaxApiException(String message) {
         super(message);
     }

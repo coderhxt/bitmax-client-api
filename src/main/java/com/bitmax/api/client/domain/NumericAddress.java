@@ -1,4 +1,4 @@
-package com.bitmax.api.client;
+package com.bitmax.api.client.domain;
 
 import lombok.Getter;
 import lombok.Setter;

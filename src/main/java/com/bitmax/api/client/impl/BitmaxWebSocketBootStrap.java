@@ -75,12 +75,12 @@ public class BitmaxWebSocketBootStrap {
         scheduledThreadPoolExecutor.scheduleAtFixedRate(() -> {
             Long localValue = localCounter.get(buildKey());
             if (localValue.longValue() == pongCounter.get(buildKey()).getCount()) {
-                logCallBack.printLog("一分钟没有收到pong, 服务端断开准备重连");
+                logCallBack.printLog(buildKey() + "一分钟没有收到pong, 服务端断开准备重连");
                 pongCounter.get(buildKey()).getWebSocket().close(1000, null);
                 pongCounter.get(buildKey()).reset();
                 //
                 restart();
-                logCallBack.printLog("重新订阅");
+                logCallBack.printLog(buildKey() + "重新订阅");
             } else {
                 localValue = pongCounter.get(buildKey()).getCount();
                 localCounter.put(buildKey(), localValue);
@@ -88,6 +88,7 @@ public class BitmaxWebSocketBootStrap {
             }
         }, 20, 15, TimeUnit.SECONDS);
     }
+
     private String buildKey() {
         return webSocketType + ":" + symbol;
     }

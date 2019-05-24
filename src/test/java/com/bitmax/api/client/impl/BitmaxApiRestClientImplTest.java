@@ -3,7 +3,6 @@ package com.bitmax.api.client.impl;
 import com.bitmax.api.client.BaseTest;
 import com.bitmax.api.client.BitmaxApiClientFactory;
 import com.bitmax.api.client.BitmaxApiRestClient;
-import com.bitmax.api.client.DepositAddressResp;
 import com.bitmax.api.client.domain.*;
 import com.bitmax.api.client.util.OrderIdWorker;
 import org.junit.Before;
@@ -19,7 +18,8 @@ public class BitmaxApiRestClientImplTest extends BaseTest {
 
     @Before
     public void setup() {
-        bitmaxApiRestClient = BitmaxApiClientFactory.newInstance("api-key","secret")
+        bitmaxApiRestClient = BitmaxApiClientFactory.newInstance("your-api-key",
+                "your-secret")
                 .newRestClient();
     }
 
@@ -129,21 +129,21 @@ public class BitmaxApiRestClientImplTest extends BaseTest {
 
     @Test
     public void placeNewOrder() {
-        OrderReq orderReq = OrderReq.builder().coid("cash123456789")
+        OrderReq orderReq = OrderReq.builder().coid("cash05001")
                 .time(System.currentTimeMillis())
-                .orderPrice("13.5")
-                .stopPrice("15.7")
-                .orderQty("3.5")
+                .orderPrice("7001")
+//                .stopPrice("15.7")
+                .orderQty("0.002")
                 .orderType("limit")
                 .side("buy")
-                .postOnly(true)
-                .timeInForce("GTC")
-                .symbol("ETH/BTC")
+//                .postOnly(true)
+//                .timeInForce("GTC")
+                .symbol("BTC/USDT")
                 .build();
         OrderResp orderResp = bitmaxApiRestClient.placeNewOrder(2, OrderType.CASH, orderReq);
         super.toPrettyShow(orderResp);
-        OrderResp orderResp1 = bitmaxApiRestClient.placeNewOrder(2, OrderType.MARGIN, orderReq);
-        super.toPrettyShow(orderResp1);
+//        OrderResp orderResp1 = bitmaxApiRestClient.placeNewOrder(2, OrderType.MARGIN, orderReq);
+//        super.toPrettyShow(orderResp1);
     }
 
 
@@ -179,14 +179,14 @@ public class BitmaxApiRestClientImplTest extends BaseTest {
     @Test
     public void cancelOrder() {
         CancelOrderReq cancelOrderReq = CancelOrderReq.builder().coid("cash123123")
-                .origCoid("cash123456789")
+                .origCoid("cash05001")
                 .symbol("ETH/BTC")
                 .time(System.currentTimeMillis())
                 .build();
         CancelOrderResp cancelOrderResp = bitmaxApiRestClient.cancelOrder(2, OrderType.CASH, cancelOrderReq);
         super.toPrettyShow(cancelOrderResp);
-        CancelOrderResp cancelOrderResp1 = bitmaxApiRestClient.cancelOrder(2, OrderType.MARGIN, cancelOrderReq);
-        super.toPrettyShow(cancelOrderResp1);
+//        CancelOrderResp cancelOrderResp1 = bitmaxApiRestClient.cancelOrder(2, OrderType.MARGIN, cancelOrderReq);
+//        super.toPrettyShow(cancelOrderResp1);
     }
 
 
@@ -218,8 +218,8 @@ public class BitmaxApiRestClientImplTest extends BaseTest {
     public void listOfAllOpenOrders() {
         AllOpenOrder allOpenOrder = bitmaxApiRestClient.listOfAllOpenOrders(2, OrderType.CASH);
         super.toPrettyShow(allOpenOrder);
-        AllOpenOrder allOpenOrder1 = bitmaxApiRestClient.listOfAllOpenOrders(2, OrderType.MARGIN);
-        super.toPrettyShow(allOpenOrder1);
+//        AllOpenOrder allOpenOrder1 = bitmaxApiRestClient.listOfAllOpenOrders(2, OrderType.MARGIN);
+//        super.toPrettyShow(allOpenOrder1);
     }
 
     @Test
@@ -232,14 +232,14 @@ public class BitmaxApiRestClientImplTest extends BaseTest {
 
     @Test
     public void basicOrderDataOfOneOrder() {
-        BasicOrderData basicOrderData = bitmaxApiRestClient.basicOrderDataOfOneOrder(2, "cash123123");
+        BasicOrderData basicOrderData = bitmaxApiRestClient.basicOrderDataOfOneOrder(2, "cash05001");
         super.toPrettyShow(basicOrderData);
     }
 
 
     @Test
     public void fillsOfOneOrder() {
-        FillsOrderResp fillsOrderResp = bitmaxApiRestClient.fillsOfOneOrder(2, "cash123123");
+        FillsOrderResp fillsOrderResp = bitmaxApiRestClient.fillsOfOneOrder(2, "cash05001");
         super.toPrettyShow(fillsOrderResp);
     }
 

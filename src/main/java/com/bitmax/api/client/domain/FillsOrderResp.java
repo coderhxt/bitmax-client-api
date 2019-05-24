@@ -14,5 +14,5 @@ import java.util.List;
 public class FillsOrderResp extends BaseResp {
 
     @JsonProperty("data")
-    private List<OrderDetail> fillOrder;
+    private List<OrderData> fillOrder;
 }

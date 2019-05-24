@@ -11,5 +11,5 @@ import lombok.Setter;
 @Setter @Getter
 public class BasicOrderData extends BaseResp {
     @JsonProperty("data")
-    private OrderDetail orderData;
+    private HistoryOrder orderData;
 }

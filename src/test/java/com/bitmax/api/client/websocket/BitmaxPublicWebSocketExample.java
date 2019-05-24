@@ -13,7 +13,8 @@ import com.bitmax.api.client.impl.BitmaxWebSocketBootStrap;
 public class BitmaxPublicWebSocketExample {
 
     public static void main(String[] args) {
-        BitmaxApiWebSocketClient bitmaxApiWebSocketClient = BitmaxApiClientFactory.newInstance().newWebSocketClient();
+        BitmaxApiWebSocketClient bitmaxApiWebSocketClient = BitmaxApiClientFactory.newInstance()
+                .newWebSocketClient();
         String symbol = "ETH-BTC";
         SubscribeConfig config = new SubscribeConfig(20, 20, false, false);
         // 订阅 public
