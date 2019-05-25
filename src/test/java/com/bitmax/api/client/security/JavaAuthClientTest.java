@@ -1,7 +1,9 @@
 package com.bitmax.api.client.security;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class JavaAuthClientTest {
 
     @Test

@@ -3,6 +3,7 @@ package com.bitmax.api.client.websocket;
 import com.bitmax.api.client.BitmaxApiClientFactory;
 import com.bitmax.api.client.BitmaxApiWebSocketClient;
 import com.bitmax.api.client.domain.WebSocketType;
+import com.bitmax.api.client.impl.BitmaxMsgHandler;
 import com.bitmax.api.client.impl.BitmaxWebSocketBootStrap;
 
 /**
@@ -14,14 +15,10 @@ public class BitmaxOrderManageWebSocketExample {
     public static void main(String[] args) {
         BitmaxApiWebSocketClient socketClient = BitmaxApiClientFactory.newInstance("your-api-key",
                 "your-secret").newWebSocketClient();
-        String symbol = "ETH-BTC";
+        String symbol = "BTC-USDT";
         // 订阅order manage
         BitmaxWebSocketBootStrap bootStrap = new BitmaxWebSocketBootStrap(WebSocketType.ORDER, socketClient,
-                symbol, null, 2, response -> {
-            System.out.println(response);
-        }, logMsg ->  {
-            System.out.println(logMsg);
-        });
+                symbol, null, 2, BitmaxMsgHandler::handleOrderUpdate, System.out::println);
         bootStrap.start();
     }
 }

@@ -3,15 +3,18 @@ package com.bitmax.api.client.impl;
 import com.bitmax.api.client.BaseTest;
 import com.bitmax.api.client.BitmaxApiClientFactory;
 import com.bitmax.api.client.BitmaxApiRestClient;
+import com.bitmax.api.client.domain.DepositAddressResp;
 import com.bitmax.api.client.domain.*;
 import com.bitmax.api.client.util.OrderIdWorker;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+@Ignore
 public class BitmaxApiRestClientImplTest extends BaseTest {
 
     BitmaxApiRestClient bitmaxApiRestClient;
@@ -129,9 +132,9 @@ public class BitmaxApiRestClientImplTest extends BaseTest {
 
     @Test
     public void placeNewOrder() {
-        OrderReq orderReq = OrderReq.builder().coid("cash05001")
+        OrderReq orderReq = OrderReq.builder().coid("cash05003")
                 .time(System.currentTimeMillis())
-                .orderPrice("7001")
+                .orderPrice("7002")
 //                .stopPrice("15.7")
                 .orderQty("0.002")
                 .orderType("limit")
@@ -178,8 +181,8 @@ public class BitmaxApiRestClientImplTest extends BaseTest {
 
     @Test
     public void cancelOrder() {
-        CancelOrderReq cancelOrderReq = CancelOrderReq.builder().coid("cash123123")
-                .origCoid("cash05001")
+        CancelOrderReq cancelOrderReq = CancelOrderReq.builder().coid("cash123126")
+                .origCoid("cash05002")
                 .symbol("ETH/BTC")
                 .time(System.currentTimeMillis())
                 .build();
