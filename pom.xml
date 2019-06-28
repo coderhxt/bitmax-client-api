@@ -50,6 +50,40 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>public</id>
+            <url>http://192.168.50.190:8081/nexus/content/repositories/public/</url>
+        </repository>
+        <repository>
+            <id>public-snapshots</id>
+            <url>http://192.168.50.190:8081/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>Central</id>
+            <url>http://192.168.50.190:8081/nexus/content/repositories/central/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>thirdparty</id>
+            <url>http://192.168.50.190:8081/nexus/content/repositories/thirdparty/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <distributionManagement>
+        <repository>
+            <id>baina-central</id>
+            <url>http://192.168.50.190:8081/nexus/content/repositories/public/</url>
+        </repository>
+        <snapshotRepository>
+            <id>baina-central</id>
+            <name>User Project Snapshot</name>
+            <url>http://192.168.50.190:8081/nexus/content/repositories/snapshots/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>

@@ -14,15 +14,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-@Ignore
+//@Ignore
 public class BitmaxApiRestClientImplTest extends BaseTest {
 
     BitmaxApiRestClient bitmaxApiRestClient;
 
     @Before
     public void setup() {
-        bitmaxApiRestClient = BitmaxApiClientFactory.newInstance("your-api-key",
-                "your-secret")
+        bitmaxApiRestClient = BitmaxApiClientFactory.newInstance("XiJ8siGZBjxKrNI9ANesvmjDu0bDlCpV",
+                "VvXGXoMUpRbd7qA7zmmoxMohxtqG9DyqSZGczqpDVB7yNA4N5kf99Ci3kwXiUKg7")
                 .newRestClient();
     }
 
